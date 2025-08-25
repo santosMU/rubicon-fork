@@ -1,5 +1,5 @@
-package com.gabriel.draw.controller;
-import com.gabriel.drawfx.service.AppService;
+package com.santos.draw.controller;
+import com.santos.drawfx.service.AppService;
 
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;

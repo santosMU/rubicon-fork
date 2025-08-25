@@ -1,9 +1,9 @@
-package com.gabriel.draw.model;
+package com.santos.draw.model;
 
 
-import com.gabriel.draw.service.LineRendererService;
+import com.santos.draw.service.LineRendererService;
 import lombok.Data;
-import com.gabriel.drawfx.model.Shape;
+import com.santos.drawfx.model.Shape;
 import java.awt.*;
 
 

@@ -1,4 +1,4 @@
-package com.gabriel.drawfx.model;
+package com.santos.drawfx.model;
 
 import lombok.Data;
 

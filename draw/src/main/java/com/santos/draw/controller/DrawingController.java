@@ -1,11 +1,11 @@
-package com.gabriel.draw.controller;
+package com.santos.draw.controller;
 
-import com.gabriel.draw.model.Line;
-import com.gabriel.drawfx.DrawMode;
-import com.gabriel.drawfx.ShapeMode;
-import com.gabriel.draw.view.DrawingView;
-import com.gabriel.drawfx.service.AppService;
-import com.gabriel.drawfx.model.Shape;
+import com.santos.draw.model.Line;
+import com.santos.drawfx.DrawMode;
+import com.santos.drawfx.ShapeMode;
+import com.santos.draw.view.DrawingView;
+import com.santos.drawfx.service.AppService;
+import com.santos.drawfx.model.Shape;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

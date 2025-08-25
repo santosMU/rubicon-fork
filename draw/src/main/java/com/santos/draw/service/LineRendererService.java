@@ -1,8 +1,8 @@
-package com.gabriel.draw.service;
+package com.santos.draw.service;
 
-import com.gabriel.draw.model.Line;
-import com.gabriel.drawfx.service.RendererService;
-import com.gabriel.drawfx.model.Shape;
+import com.santos.draw.model.Line;
+import com.santos.drawfx.service.RendererService;
+import com.santos.drawfx.model.Shape;
 
 import java.awt.*;
 

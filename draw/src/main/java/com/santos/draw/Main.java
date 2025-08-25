@@ -1,12 +1,8 @@
-package com.gabriel.draw;
+package com.santos.draw;
 
-import com.gabriel.draw.controller.DrawingWindowController;
-import com.gabriel.draw.service.DrawingAppService;
-import com.gabriel.draw.controller.DrawingController;
-import com.gabriel.draw.view.DrawingView;
-import com.gabriel.draw.view.DrawingFrame;
-import com.gabriel.drawfx.model.Drawing;
-import com.gabriel.drawfx.service.AppService;
+import com.santos.draw.service.DrawingAppService;
+import com.santos.draw.view.DrawingFrame;
+import com.santos.drawfx.service.AppService;
 
 import javax.swing.*;
 

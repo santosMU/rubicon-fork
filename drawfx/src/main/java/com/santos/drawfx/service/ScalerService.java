@@ -1,6 +1,6 @@
-package com.gabriel.drawfx.service;
+package com.santos.drawfx.service;
 
-import com.gabriel.drawfx.model.Shape;
+import com.santos.drawfx.model.Shape;
 
 import java.awt.*;
 

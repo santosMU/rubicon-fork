@@ -1,8 +1,8 @@
-package com.gabriel.drawfx.service;
+package com.santos.drawfx.service;
 
-import com.gabriel.drawfx.DrawMode;
-import com.gabriel.drawfx.ShapeMode;
-import com.gabriel.drawfx.model.Shape;
+import com.santos.drawfx.DrawMode;
+import com.santos.drawfx.ShapeMode;
+import com.santos.drawfx.model.Shape;
 
 import java.awt.*;
 
