@@ -34,6 +34,7 @@ public class  DrawingAppService implements AppService {
     @Override
     public void setShapeMode(ShapeMode shapeMode) {
         this.shapeMode = shapeMode;
+        System.out.println("Shape set to: "+shapeMode); // console print of shape set
     }
 
     @Override

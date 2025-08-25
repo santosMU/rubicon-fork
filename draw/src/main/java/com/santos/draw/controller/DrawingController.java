@@ -1,6 +1,6 @@
 package com.santos.draw.controller;
 
-import com.santos.draw.model.Line;
+import com.santos.draw.model.*;
 import com.santos.drawfx.DrawMode;
 import com.santos.drawfx.ShapeMode;
 import com.santos.draw.view.DrawingView;
@@ -34,25 +34,43 @@ public class DrawingController  implements MouseListener, MouseMotionListener {
     public void mousePressed(MouseEvent e) {
         Point start;
         if(appService.getDrawMode() == DrawMode.Idle) {
-            if(appService.getShapeMode() == ShapeMode.Line) {
-                start = e.getPoint();
+            start = e.getPoint();
 
-                currentShape = new Line(start,start);
-                currentShape.getRendererService().render(drawingView.getGraphics(), currentShape,false );
-                appService.setDrawMode(DrawMode.MousePressed);
-
+            switch (appService.getShapeMode()) {
+                case Line:
+                    currentShape = new Line(start, start);
+                    break;
+                case RectangleShape:
+                    currentShape = new RectangleShape(start, start);
+                    break;
+                case EllipseShape:
+                    currentShape = new EllipseShape(start, start);
+                    break;
             }
+
+            if (currentShape != null){
+                currentShape.getRendererService().render(drawingView.getGraphics(), currentShape, false);
+                appService.setDrawMode(DrawMode.MousePressed);
+            }
+
+            // old method
+//            if(appService.getShapeMode() == ShapeMode.Line) {
+//                start = e.getPoint();
+//
+//                currentShape = new Line(start,start);
+//                currentShape.getRendererService().render(drawingView.getGraphics(), currentShape,false );
+//                appService.setDrawMode(DrawMode.MousePressed);
+//            }
+
+
         }
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-         if(appService.getDrawMode() == DrawMode.MousePressed){
-             if(appService.getShapeMode() == ShapeMode.Line) {
-                 end = e.getPoint();
-                 appService.create(currentShape);
-                 appService.setDrawMode(DrawMode.Idle);
-             }
+         if(appService.getDrawMode() == DrawMode.MousePressed && currentShape != null){
+             appService.create(currentShape);
+             appService.setDrawMode(DrawMode.Idle);
          }
     }
 
@@ -68,13 +86,11 @@ public class DrawingController  implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        if(appService.getDrawMode() == DrawMode.MousePressed) {
-            if (appService.getShapeMode() == ShapeMode.Line) {
-                end = e.getPoint();
-                currentShape.getRendererService().render(drawingView.getGraphics(), currentShape,true );
-                appService.scale(currentShape,end);
-                currentShape.getRendererService().render(drawingView.getGraphics(), currentShape,true );
-            }
+        if(appService.getDrawMode() == DrawMode.MousePressed && currentShape != null) {
+            end = e.getPoint();
+            currentShape.getRendererService().render(drawingView.getGraphics(), currentShape,true );
+            appService.scale(currentShape,end);
+            currentShape.getRendererService().render(drawingView.getGraphics(), currentShape,true );
         }
     }
 
