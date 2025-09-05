@@ -4,4 +4,5 @@ public enum ShapeMode {
     Line,
     RectangleShape,
     EllipseShape,
+    TriangleShape
 }

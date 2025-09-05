@@ -43,6 +43,9 @@ public class DrawingController  implements MouseListener, MouseMotionListener {
                 case RectangleShape:
                     currentShape = new RectangleShape(start, start);
                     break;
+                case TriangleShape:
+                    currentShape = new TriangleShape(start, start);
+                    break;
                 case EllipseShape:
                     currentShape = new EllipseShape(start, start);
                     break;

@@ -1,6 +1,7 @@
 package com.santos.draw.view;
 
 import com.santos.draw.controller.DrawingController;
+import com.santos.draw.controller.DrawingWindowController;
 import com.santos.drawfx.model.Drawing;
 import com.santos.drawfx.model.Shape;
 import com.santos.drawfx.service.AppService;
@@ -14,14 +15,16 @@ public class DrawingView extends JPanel {
     public DrawingView(AppService appService){
 
         this.appService = appService;
-        DrawingController drawingController = new DrawingController(appService, this);
+        appService.setView(this);
+
     }
 
     @Override
     public void paint(Graphics g) {
         Drawing drawing = (Drawing) appService.getModel();
         for(Shape shape : drawing.getShapes()){
-            shape.getRendererService().render(g, shape, false);
+            shape.getRendererService().render(g, shape, true);
+            appService.setView(this);
         }
     }
 }
